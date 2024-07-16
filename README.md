@@ -21,19 +21,23 @@ This project demonstrates a simple integration of Stripe payment processing with
    ```sh
    git clone https://github.com/snzxvss/cheker-main.git
 2. Navigate to the project directory:
+    ```sh
     cd flask-stripe-project
 3. Install the required packages:
+    ```sh
     pip install -r requirements.txt
 4. Set up the environment variables. Create a .env file in the app directory and add the following:
+    ```sh
     SECRET_KEY=your_secret_key
     STRIPE_SECRET_KEY=your_stripe_secret_key
     STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
-    Replace your_secret_key, your_stripe_secret_key, and your_stripe_publishable_key with your actual keys.
+Replace your_secret_key, your_stripe_secret_key, and your_stripe_publishable_key with your actual keys.
 
-Running the Application
+## Running the Application
 
 Start the Flask application:
+    ```sh
     python run.py
 
 Open a web browser and navigate to http://127.0.0.1:5000/ to see the application in action.
