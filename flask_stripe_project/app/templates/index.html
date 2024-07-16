@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Crédito - Procesamiento con Stripe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-success text-white text-center py-3">
+        <h1>API Stripe</h1>
+    </header>
+    <main class="container my-4">
+        <section>
+            <form id="card-form" action="/process_cards" method="POST" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="cards">Ingresa las tarjetas de crédito (formato: Número|MM|YYYY|CVC):</label>
+                    <textarea id="cards" name="cards" class="form-control" rows="10" placeholder="Ejemplo:
+4535904364172568|06|2024|508
+4535907203418183|12|2027|328
+4535902525887546|08|2025|158
+4535907470007800|03|2029|005
+4535908757263744|02|2030|445
+4535904326800512|06|2030|865
+4535902782267374|12|2031|867
+4535905617601451|04|2026|038
+4535902557485763|06|2029|347
+4535906765221423|06|2025|507" required></textarea>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese los datos de las tarjetas.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Procesar</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Flask Stripe Project. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Validación de formulario Bootstrap
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>
