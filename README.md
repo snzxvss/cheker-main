@@ -45,8 +45,8 @@ Usage
 
 Enter credit card details in the format Number|MM|YYYY|CVC in the text area provided on the homepage and submit the form to process the cards through Stripe.
 
-Contributing
+## Contributing
 Contributions are welcome! Please feel free to submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
